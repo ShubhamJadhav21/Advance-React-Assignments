@@ -1,10 +1,11 @@
 import React from 'react'
-import Image from './components/Image'
+
+import OtpGnerator from './components/OtpGenerator'
 
 export default function App() {
   return (
     <div>
-      <Image/>
+      <OtpGnerator/>
     </div>
   )
 }

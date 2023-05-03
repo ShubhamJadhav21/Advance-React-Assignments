@@ -1,0 +1,33 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+
+
+}
+h1{
+    color: red;
+    font-size: larger;
+    margin-bottom:2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    padding: 1rem;
+    width: 20rem;
+}
+button{
+    padding: 1rem;
+    width: 8rem;
+    margin-left: 2rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #1877f2;
+    color: white;
+    font-size: larger;
+}
+button:hover{
+    background-color:#0956b5
+}
