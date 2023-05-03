@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+
+}
+.wrapper{
+    border-radius: 2rem;
+    text-align: center;
+    padding: 1rem;
+    width: 300px;
+    background-color: aquamarine;
+    margin-bottom: 2rem;
+
+}
+img{
+    height: 170px;
+    width: auto;
+    border-radius: 50%;
+
+}
+h1{
+    color: red;
+}
+#id{
+    color: pink;
+}
