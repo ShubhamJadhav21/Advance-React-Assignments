@@ -1,13 +1,14 @@
 import React from 'react'
+import DogImage from './components/DogImage'
 
 
 
-import OtpGenerator from './components/OtpGenerator'
+
 
 export default function App() {
   return (
     <div>
-      <OtpGenerator/>
+      <DogImage/>
     </div>
   )
 }
