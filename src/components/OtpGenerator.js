@@ -1,68 +1,58 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./OtpGenerator.css";
-import { Alert } from "@mui/material";
-import CheckIcon from "@mui/icons-material/Check";
+export default function OtpGenerator() {
+  const [number, setNumber] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
-export default function OtpGnerator() {
-  const [number, setNumber] = useState(" ");
-  const [error, setError] = useState(" ");
-  const [successMessage, setSuccessMessage] = useState(" ");
-
-  function getMobileNum(e) {
+  function getNo(e) {
     setNumber(e.target.value);
   }
-  function getOtp(e) {
-    e.preventDefault();
 
-    // Validate mobile number
-    const numberRegex = /^[6-9]\d{9}$/;
-    if (!numberRegex.test(number)) {
-      setError(
-        <Alert variant="filled" severity="error">
-          Please Enter Valid mobile no !!!
-        </Alert>
-      );
-      setTimeout(() => {
-        setError("");
-      }, 2000); // clear error message after 2 seconds
-
-      return;
-    }
-
-    axios
-      .post("https://cdn-api.co-vin.in/api/v2/auth/public/generateOTP", {
-        mobile: number,
-      })
-      .then((res) => {
-        if (res.status >= 200 && res.status < 300) {
-          setNumber("");
-          setSuccessMessage(
-            <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
-              Otp Sent Successfully !
-            </Alert>
-          );
-          setTimeout(() => {
+  function getOtp() {
+    const NoRegex = /^[6-9]\d{9}$/;
+    if (!NoRegex.test(number)) {
+      setError("Please Enter Valid Number");
+      setSuccess("");
+    } else {
+      const url = "https://cdn-api.co-vin.in/api/v2/auth/public/generateOTP";
+      const option = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ mobile: number }),
+      };
+      fetch(url, option)
+        .then((response) => {
+          if (response.status >= 200 && response.status < 300) {
+            setNumber("");
+            setSuccess("OTP sent successfully.");
             setError("");
-          }, 2000);
-        } else {
-          throw new Error("Failed to generate OTP.");
-        }
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
+          } else {
+            throw new Error("Failed to generate OTP.");
+          }
+          return response.json();
+        })
+        .then((data) => console.log(data))
+        .catch((error) => {
+          setError(error.message);
+          setSuccess("");
+        });
+    }
   }
 
   return (
-    <>
+    <div>
+      <h1>{success}</h1>
       <h1>{error}</h1>
-      <h1>{successMessage}</h1>
-      <div className="wrapper">
-        <input type="tel" value={number} onChange={getMobileNum} />
-        <button onClick={getOtp}>Get Otp</button>
-      </div>
-           
-    </>
+      <input
+        type="tel"
+        placeholder="Enter no to send otp"
+        value={number}
+        onChange={getNo}
+      />
+      <button onClick={getOtp}>Get OTP</button>
+    </div>
   );
 }
