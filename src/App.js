@@ -1,13 +1,15 @@
 import React from 'react'
 import './App.css';
-import CardData from './components/Molecules/CardData';
+import Board from './components/Board';
+
+
 
 
 
 export default function App() {
   return (
     <div>
-      <CardData/>
+     <Board/>
     </div>
   )
 }
