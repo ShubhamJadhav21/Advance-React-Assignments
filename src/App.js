@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css';
-import Board from './components/Board';
-
+import AddToDo from './components/Molecules/AddToDo/AddToDo';
 
 
 
@@ -9,7 +8,7 @@ import Board from './components/Board';
 export default function App() {
   return (
     <div>
-     <Board/>
+    <AddToDo/>
     </div>
   )
 }
