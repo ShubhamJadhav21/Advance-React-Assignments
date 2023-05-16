@@ -1,0 +1,55 @@
+.wrapper {
+    background-color: black;
+    width: 50%;
+    padding: 4rem;
+    height: 100vh;
+    color: white;
+    box-sizing: border-box;
+  
+    line-height: 1;
+  }
+  .Text {
+    color: white;
+    font-size: 5rem;
+    text-align: center;
+  }
+  
+  .text {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .btn2 {
+    background-color: white;
+    color: blue;
+    border-radius: 1rem;
+    width: 10vw;
+    padding: 0.5rem;
+    font-size: larger;
+  }
+  .rtlPart {
+    background-image: url("https://media.istockphoto.com/id/1049768416/photo/content-trendy-cheerful-nice-cute-adorable-lovely-attractive-brunette-girl-with-wavy-hair-in.jpg?s=612x612&w=0&k=20&c=y4HvFZSdr9QBrTa628aX3CrPYQK5HYtnW-tw5Gg5gyQ=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 50%; */
+    width: 50%;
+  }
+  .container {
+    width: 100%;
+    display: flex;
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column-reverse;
+    }
+    .wrapper {
+      width: 100%;
+    }
+    .rtlPart {
+      width: 100vw;
+      height: 100vw;
+    }
+    .btn2{
+        width:6rem;
+        height: 4rem;
+    }
+  }
