@@ -1,10 +1,11 @@
 import React from 'react'
-import Todo from './components/Todo'
+import TestTimer from './components/Molecules/Timer/TestTimer'
+import Quiz from './components/Organisms/Quiz/Quiz'
 
 export default function App() {
   return (
     <div>
-      <Todo/>
+      <Quiz/>
     </div>
   )
 }
