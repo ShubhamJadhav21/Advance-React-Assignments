@@ -1,11 +1,10 @@
-import React from 'react'
-import TestTimer from './components/Molecules/Timer/TestTimer'
-import Quiz from './components/Organisms/Quiz/Quiz'
-
+import React from "react";
+import SearchBar from "./components/Organisms/SearchBar/SearchBar";
+import "./App.css";
 export default function App() {
   return (
     <div>
-      <Quiz/>
+      <SearchBar />
     </div>
-  )
+  );
 }
