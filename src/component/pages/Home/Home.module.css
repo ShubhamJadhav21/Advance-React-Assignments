@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  width: 90vw;
+
+  margin: auto;
+  overflow: auto;
+  margin-top: 3rem;
+  padding: 2rem;
+}
+.card {
+  display: flex;
+  gap: 2rem;
+}
+img {
+  height: 15rem;
+  border-radius: 1rem;
+}
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+body {
+  background-color: rgb(15, 16, 20);
+}
+p {
+  color: white;
+  margin: auto;
+}
+.btn {
+  background-color: rgb(47, 121, 219);
+  padding: 0.3rem;
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+}
+.heading{
+  color: white;
+  margin: auto;
+  margin-left: 12rem;
+  font-size: 2rem;
+  color: palevioletred;
+}
