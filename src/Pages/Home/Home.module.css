@@ -1,0 +1,66 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+.disable{
+  display: none;
+}
+.adminLogo {
+  height: 10rem;
+  width: 10rem;
+}
+.studentLogo {
+  height: 10rem;
+  width: 10rem;
+}
+.studentBtn {
+  width: 100%;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #28a745;
+  border: none;
+  margin-top: 0.8rem;
+  color: white;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+}
+
+.adminBtn {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  background-color: #007bff;
+  border: none;
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .adminBtn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  .studentBtn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  .adminLogo {
+    height: 30vh;
+    width: auto;
+  }
+  .studentLogo {
+    height: 30vh;
+    width: auto;
+  }
+}

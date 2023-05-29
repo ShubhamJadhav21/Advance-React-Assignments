@@ -1,21 +1,28 @@
-import React from 'react'
-import { Route,Routes } from 'react-router-dom'
-import Home from './component/pages/Home/Home'
-import Navbar from './component/Molecules/Nav/Navbar'
-import Favourite from './component/pages/Favourite/Favourite'
-import { Provider } from 'react-redux'
-import store from './redux/store'
-export default function App() {
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import Home from "./Pages/Home/Home";
+import AdminNav from "./components/Organisms/Nav/AdminNav";
+
+import StudentNav from "./components/Organisms/Nav/StudentNav";
+
+import Admin from "./Pages/Admin/Admin";
+import Student from "./Pages/Student/Student";
+
+const App = () => {
   return (
-    <Provider store={store}>
     <div>
-      
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/favourite' element={<Favourite/>}/>
-      </Routes>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Student" element={<Student />} />
+          <Route path="/AdminNav" element={<AdminNav />} />
+          <Route path="/StudentNav" element={<StudentNav />} />
+          <Route path="/Admin" element={<Admin />} />
+        </Routes>
+      </Router>
     </div>
-    </Provider>
-  )
-}
+  );
+};
+
+export default App;
